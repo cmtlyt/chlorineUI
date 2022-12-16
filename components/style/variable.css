@@ -1,0 +1,12 @@
+:root {
+  --main-color-yg: yellowgreen;
+  --main-color-gy: greenyellow;
+  --main-color-white: #fefefe;
+  --main-color-block: #333;
+  --primary-color: var(--main-color-yg);
+  --success-color: #67c23a;
+  --info-color: #909399;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --el-primary-color: #409eff;
+}

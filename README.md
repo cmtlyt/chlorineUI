@@ -1,24 +1,25 @@
-# chlorine-ui
+# chlorine-ui 组件库
 
-## Project setup
-```
-npm install
-```
+### 快速开始
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+#### 安装组件库
+
+```bash
+npm install @cmtlyt/chlorine-ui
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+#### 引用组件库
+
+```js
+// 全部引入
+import 'chlorine-ui/dist/style/index.css';
+import chlorineUI from 'chlorine-ui';
+Vue.use(chlorineUI);
+
+// 按需引入
+import 'chlorine-ui/dist/style/index.css';
+import { Button } from 'chlorine-ui';
+Vue.use(Button)
+Vue.component(Button)
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
