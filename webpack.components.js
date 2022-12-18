@@ -24,14 +24,8 @@ module.exports = {
   // plugins: [new VueLoaderPlugin()],
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-          },
-        ],
-      },
+      { test: /\.vue$/, use: [{ loader: 'vue-loader' }] },
+      { test: /\.s[ca]ss/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
 }
