@@ -1,6 +1,4 @@
-# chlorine-ui 组件库
-
-### 快速开始
+# 快速开始
 
 #### 安装组件库
 
@@ -21,4 +19,3 @@ Vue.use(Button)
 // 或
 Vue.component(Button)
 ```
-

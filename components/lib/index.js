@@ -1,3 +1,5 @@
+import '../style/index.scss'
+
 import Button from './button'
 
 const cmpList = [Button]
