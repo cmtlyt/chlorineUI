@@ -1,0 +1,18 @@
+.cl-icon {
+  width: max-content;
+  .cl-icon__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: inherit;
+    }
+  }
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

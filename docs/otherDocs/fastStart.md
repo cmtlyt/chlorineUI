@@ -10,10 +10,12 @@ npm install @cmtlyt/chlorine-ui
 
 ```js
 // 全部引入
+import '@cmtlyt/chlorine-ui/dist/style/index.css'
 import chlorineUI from 'chlorine-ui';
 Vue.use(chlorineUI);
 
 // 按需引入
+import '@cmtlyt/chlorine-ui/dist/style/index.css'
 import { Button } from 'chlorine-ui';
 Vue.use(Button)
 // 或

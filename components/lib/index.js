@@ -1,18 +1,16 @@
-import '../style/index.scss'
+import button from './button/main.vue'
+import icon from './icon/main.vue'
 
-import Button from './button'
-
-const cmpList = [Button]
+const cmpList = { button, icon }
 
 const install = Vue => {
   if (install.installed) return
-  for (const cmp of cmpList) {
-    Vue.component(cmp.name, cmp)
+  for (const cmp of Object.values(cmpList)) {
+    Vue.use(cmp)
   }
 }
-
-export const clButton = Button
-
+export const clButton = button
+export const clIcon = icon
 export default {
   install,
 }

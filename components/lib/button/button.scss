@@ -125,5 +125,11 @@
         }
       }
     }
+    &.disabled {
+      pointer-events: none;
+      &::before {
+        box-shadow: inset 0 0 0 999px #ffffff40;
+      }
+    }
   }
 }

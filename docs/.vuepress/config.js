@@ -16,8 +16,7 @@ module.exports = {
     nav: [
       { text: '快速开始', link: '/otherDocs/fastStart' },
       { text: '组件', link: '/componentDocs/base/button' },
-      { text: 'Gitee', link: 'https://gitee.com/cmtlyt' },
-      { text: 'GitHub', link: 'https://github.com/cmtlyt' },
+      { text: 'GitHub', link: 'https://github.com/cmtlyt/chlorineUI' },
     ],
   },
   alias: {

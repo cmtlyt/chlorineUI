@@ -60,11 +60,16 @@
       <clButton :loading="loading" @click="loadingTest" type="danger">123<i class="clfont cl-close"></i></clButton>
       <clButton :loading="loading" @click="loadingTest" type="danger">123</clButton>
     </div>
+    <div class="icons">
+      <clIcon name="star" />
+      <clIcon icon="star" />
+      <clIcon />
+    </div>
   </div>
 </template>
 
 <script>
-import { clButton } from '../components/lib'
+import { clButton, clIcon } from '../components/lib'
 export default {
   name: 'App',
   data() {
@@ -72,7 +77,7 @@ export default {
       loading: true,
     }
   },
-  components: { clButton },
+  components: { clButton, clIcon },
   methods: {
     loadingTest() {
       console.log('isloading')
@@ -81,7 +86,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -89,5 +94,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  .icons {
+    font-size: 30px;
+  }
 }
 </style>

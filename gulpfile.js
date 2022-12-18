@@ -5,7 +5,7 @@ const gulpFilter = require('gulp-filter')
 
 // 打包scss
 gulp.task('sass', async function () {
-  return gulp.src('components/style/**/*.scss').pipe(sass()).pipe(minifyCSS()).pipe(gulp.dest('dist/style'))
+  return gulp.src('components/**/*.scss').pipe(sass()).pipe(minifyCSS()).pipe(gulp.dest('dist'))
 })
 
 // 打包字体文件

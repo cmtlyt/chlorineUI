@@ -1,7 +1,5 @@
 const glob = require('glob')
 const path = require('path')
-// const { VueLoaderPlugin } = require('vue-loader')
-
 const entry = {}
 
 !(async (dirPath, entry) => {
@@ -14,18 +12,24 @@ const entry = {}
 
 module.exports = {
   entry,
-  mode: 'development',
+  mode: 'production',
   output: {
-    filename: '[name].umd.js',
-    path: path.resolve(__dirname, 'dist'),
-    library: 'clui',
-    libraryTarget: 'umd',
+    filename: '[name]/index.js',
+    path: path.resolve(__dirname, 'dist/lib'),
+    library: {
+      name: '[name]',
+      type: 'umd',
+      umdNamedDefine: true,
+    },
+    // libraryTarget: 'umd',
   },
-  // plugins: [new VueLoaderPlugin()],
   module: {
     rules: [
       { test: /\.vue$/, use: [{ loader: 'vue-loader' }] },
-      { test: /\.s[ca]ss/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      {
+        test: /\.s?[ca]ss/,
+        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+      },
     ],
   },
 }
