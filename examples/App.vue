@@ -50,18 +50,20 @@
       <clButton icon="cl-two-dimensional-code-two" type="warning">123</clButton>
       <clButton @click="loading = !loading" icon="cl-close" type="danger">123</clButton>
       <br />
-      <clButton loading @click="loadingTest" icon="cl-star">123</clButton>
-      <clButton loading @click="loadingTest" icon="cl-preview-close-one" type="success">123</clButton>
-      <clButton loading @click="loadingTest" icon="cl-info" type="primary">123</clButton>
-      <clButton loading @click="loadingTest" icon="cl-printer" type="el-primary">123</clButton>
-      <clButton loading @click="loadingTest" icon="cl-down" type="info">123</clButton>
-      <clButton loading @click="loadingTest" icon="cl-two-dimensional-code-two" type="warning">123</clButton>
-      <clButton loading @click="loadingTest" icon="cl-close" type="danger">123</clButton>
-      <clButton :loading="loading" @click="loadingTest" type="danger">123<i class="clfont cl-close"></i></clButton>
-      <clButton :loading="loading" @click="loadingTest" type="danger">123</clButton>
+      <div>
+        <clButton loading @click="loadingTest" icon="cl-star">123</clButton>
+        <clButton loading @click="loadingTest" icon="cl-preview-close-one" type="success">123</clButton>
+        <clButton loading @click="loadingTest" icon="cl-info" type="primary">123</clButton>
+        <clButton loading @click="loadingTest" icon="cl-printer" type="el-primary">123</clButton>
+        <clButton loading @click="loadingTest" icon="cl-down" type="info">123</clButton>
+        <clButton loading @click="loadingTest" icon="cl-two-dimensional-code-two" type="warning">123</clButton>
+        <clButton loading @click="loadingTest" icon="cl-close" type="danger">123</clButton>
+        <clButton :loading="loading" @click="loadingTest" type="danger">123<clIcon icon="star" /></clButton>
+        <clButton :loading="loading" @click="loadingTest" type="danger">123</clButton>
+      </div>
     </div>
     <div class="icons">
-      <clIcon name="star" />
+      <clIcon rotate name="star" />
       <clIcon icon="star" />
       <clIcon />
     </div>
@@ -94,6 +96,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  .btns>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .icons {
     font-size: 30px;
   }

@@ -48,11 +48,6 @@
       display: flex;
       align-items: center;
       gap: var(--btn-icon-space);
-      i {
-        position: relative;
-        right: -0.06em;
-        font-size: inherit;
-      }
     }
     &:hover::before {
       box-shadow: inset 0 0 0 999px #ffffff30;
@@ -108,7 +103,7 @@
     &.loading {
       pointer-events: none;
       i {
-        animation: loading 5s linear infinite;
+        animation: rotate 5s linear infinite;
         &::before {
           content: '\e635';
         }
@@ -116,7 +111,7 @@
       &::before {
         box-shadow: inset 0 0 0 999px #ffffff40;
       }
-      @keyframes loading {
+      @keyframes rotate {
         0% {
           transform: rotate(0);
         }

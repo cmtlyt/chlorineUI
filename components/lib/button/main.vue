@@ -6,7 +6,7 @@
       v-on="!loading && !disabled && $listeners"
     >
       <span>
-        <i v-if="icon || loading" class="clfont" :class="icon"></i>
+        <clIcon v-if="icon || loading" :rotate="loading" :name="loading ? 'loading-one' : icon" />
         <slot></slot>
       </span>
     </div>
@@ -14,8 +14,10 @@
 </template>
 
 <script>
+import clIcon from '../icon/main.vue'
 export default {
   name: 'clButton',
+  components: { clIcon },
   props: {
     type: {
       type: String,

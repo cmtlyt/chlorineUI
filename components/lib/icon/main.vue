@@ -1,10 +1,10 @@
 <template>
-  <section v-if="name || icon" class="cl-icon">
-    <div class="cl-icon__content">
+  <section class="cl-icon">
+    <div class="cl-icon__content" :class="{ rotate: rotate }">
       <svg v-if="name" class="icon" aria-hidden="true">
-        <use :xlink:href="'#cl-' + name"></use>
+        <use :xlink:href="('#cl-' + name) | removeHeadCl"></use>
       </svg>
-      <i v-else class="clfont" :class="'cl-' + icon"></i>
+      <i v-else class="clfont" :class="('cl-' + icon) | removeHeadCl"></i>
     </div>
   </section>
 </template>
@@ -16,11 +16,17 @@ export default {
   props: {
     name: { type: String, default: '' },
     icon: { type: String, defalut: '' },
+    rotate: { type: Boolean, default: false },
   },
   data() {
     return {}
   },
   methods: {},
+  filters: {
+    removeHeadCl(value) {
+      return value.replace('cl-cl', 'cl')
+    },
+  },
 }
 </script>
 
