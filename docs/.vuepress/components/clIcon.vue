@@ -1,16 +1,13 @@
 <template>
   <section class="cl-icon" :style="{ 'font-size': size + 'px' }">
     <div class="cl-icon__content" :class="{ rotate: rotate }">
-      <svg v-if="name" class="icon" aria-hidden="true">
-        <use :xlink:href="('#cl-' + name) | removeHeadCl"></use>
-      </svg>
-      <i v-else-if="icon" class="clfont" :class="('cl-' + icon) | removeHeadCl"></i>
+      <i v-if="icon || name" class="clfont" :class="('cl-' + (icon || name)) | removeHeadCl"></i>
     </div>
   </section>
 </template>
 
 <script>
-import '../../iconfont'
+import '../public/script/iconfont.js'
 export default {
   name: 'clIcon',
   props: {
@@ -31,6 +28,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import './style.scss';
+<style scoped>
+@import '~@style/icon.css';
 </style>

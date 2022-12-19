@@ -6,7 +6,7 @@
       v-on="!loading && !disabled && $listeners"
     >
       <span>
-        <clIcon v-if="icon || loading" :rotate="loading" :name="loading ? 'loading-one' : icon" />
+        <clIcon v-if="icon || loading" :size="iconSize" :rotate="loading" :name="loading ? 'loading-one' : icon" />
         <slot></slot>
       </span>
     </div>
@@ -22,7 +22,8 @@ export default {
     type: {
       type: String,
       default: 'base',
-      validator: value => ['base', 'primary', 'success', 'info', 'warning', 'danger', 'el-primary'].includes(value),
+      validator: value =>
+        ['text', 'base', 'primary', 'success', 'info', 'warning', 'danger', 'el-primary'].includes(value),
     },
     round: { type: Boolean, default: false },
     circle: { type: Boolean, default: false },
@@ -30,6 +31,7 @@ export default {
     loading: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     icon: { type: String, default: '' },
+    iconSize: { type: [String, Number], default: '' },
   },
   data() {
     return {}
@@ -39,5 +41,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import './button.scss';
+@import './style.scss';
 </style>

@@ -5,7 +5,8 @@
   --btn-bgcolor: transparent;
   --btn-font-color: var(--main-color-block);
   --btn-border-color: var(--info-color);
-  --btn-bg-opacity: 1;
+  --btn-bg-opacity: 0;
+  --btn-opacity: 1;
   --btn-icon-space: 5px;
 
   position: relative;
@@ -19,6 +20,9 @@
   letter-spacing: var(--btn-spacing);
   user-select: none;
 
+  &:has(.disabled, .loading) {
+    cursor: not-allowed;
+  }
   &__content {
     box-sizing: border-box;
     display: flex;
@@ -30,6 +34,9 @@
     color: var(--btn-font-color);
     box-shadow: inset 0 0 0 1px var(--btn-border-color);
     border-radius: var(--btn-border-radius);
+    transition: box-shadow 200ms, color 200ms;
+    opacity: var(--btn-opacity);
+    cursor: pointer;
     &::before {
       position: absolute;
       top: 0;
@@ -40,7 +47,7 @@
       border-radius: var(--btn-border-radius);
       background-color: var(--btn-bgcolor);
       opacity: var(--btn-bg-opacity);
-      transition: box-shadow 200ms;
+      transition: box-shadow 200ms, background-color 200ms, opacity 200ms;
     }
     span {
       position: relative;
@@ -58,30 +65,39 @@
     &.round {
       --btn-border-radius: 999px;
     }
-    &.base {
-      box-shadow: inset 0 0 0 1px var(--info-color);
+    &.text {
+      --btn-bgcolor: transparent;
+      --btn-font-color: var(--primary-color);
+      --btn-padding: 10px 5px;
+      box-shadow: unset;
     }
     &.primary {
+      --btn-bg-opacity: 1;
       --btn-bgcolor: var(--primary-color);
       --btn-font-color: var(--main-color-white);
     }
     &.success {
+      --btn-bg-opacity: 1;
       --btn-bgcolor: var(--success-color);
       --btn-font-color: var(--main-color-white);
     }
     &.info {
+      --btn-bg-opacity: 1;
       --btn-bgcolor: var(--info-color);
       --btn-font-color: var(--main-color-white);
     }
     &.warning {
+      --btn-bg-opacity: 1;
       --btn-bgcolor: var(--warning-color);
       --btn-font-color: var(--main-color-white);
     }
     &.danger {
+      --btn-bg-opacity: 1;
       --btn-bgcolor: var(--danger-color);
       --btn-font-color: var(--main-color-white);
     }
     &.el-primary {
+      --btn-bg-opacity: 1;
       --btn-bgcolor: var(--el-primary-color);
       --btn-font-color: var(--main-color-white);
     }
@@ -89,10 +105,26 @@
       --btn-bg-opacity: 0.1;
       --btn-font-color: var(--btn-bgcolor);
       --btn-border-color: var(--btn-bgcolor);
-      box-shadow: inset 0 0 0 1px var(--btn-border-color);
+      transition: color 200ms;
       &.base {
         --btn-font-color: var(--main-color-block);
-        box-shadow: inset 0 0 0 1px var(--info-color);
+        --btn-border-color: var(--info-color);
+        &:hover {
+          --btn-bgcolor: transparent;
+        }
+      }
+      &:hover {
+        --btn-bg-opacity: 1;
+        --btn-font-color: var(--main-color-white);
+      }
+    }
+    &.base {
+      box-shadow: inset 0 0 0 1px var(--btn-border-color);
+      &:hover {
+        --btn-bg-opacity: 0.1;
+        --btn-border-color: var(--primary-color);
+        --btn-bgcolor: var(--primary-color);
+        --btn-font-color: var(--primary-color);
       }
     }
     &.icon {
@@ -121,9 +153,13 @@
       }
     }
     &.disabled {
+      --btn-opacity: 0.5;
       pointer-events: none;
       &::before {
         box-shadow: inset 0 0 0 999px #ffffff40;
+      }
+      &.text {
+        --btn-font-color: var(--info-color);
       }
     }
   }

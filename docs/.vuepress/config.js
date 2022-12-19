@@ -1,7 +1,8 @@
 const path = require('path')
+const VueExamplePlugin = require('vuepress-plugin-vue-example')
 
 module.exports = {
-  base:'/chlorineUI/',
+  base: '/chlorineUI/',
   title: 'Chlorine UI',
   description: '一个可能会令人窒息的组件库',
   themeConfig: {
@@ -10,7 +11,7 @@ module.exports = {
       {
         title: '基本组件',
         path: '/componentDocs/base/button',
-        children: ['/componentDocs/base/button'],
+        children: ['/componentDocs/base/button', '/componentDocs/base/icon', '/componentDocs/base/viewWindow'],
       },
     ],
     nav: [
@@ -23,4 +24,9 @@ module.exports = {
     styles: path.resolve(__dirname, './styles'),
     '@style': path.resolve(__dirname, './public/style'),
   },
+  plugins: [
+    VueExamplePlugin({
+      componentsPath: '/docs/examples/',
+    }),
+  ],
 }
