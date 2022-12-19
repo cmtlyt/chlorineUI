@@ -22,10 +22,8 @@
 </template>
 
 <script>
-import clButton from '../button/main.vue'
 export default {
   name: 'clViewWindow',
-  components: { clButton },
   props: {
     showBtnText: { type: String, default: '显示' },
     hideBtnText: { type: String, default: '隐藏' },
