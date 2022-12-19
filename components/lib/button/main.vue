@@ -11,7 +11,6 @@
           class="icon"
           aria-hidden="true"
           :style="{ height: iconSize + 'px', width: iconSize + 'px' }"
-          :class="{ rotate: loading }"
         >
           <use :xlink:href="('#cl-' + (loading ? 'loading-one' : icon)) | removeHeadCl"></use>
         </svg>
