@@ -11,9 +11,10 @@
       </div>
       <div class="cl-view-window__content-btns" v-if="showBtnBox" @click="isHide = !isHide">
         <slot name="btns">
-          <clButton class="btn-text" iconSize="20" :icon="isHide ? 'preview-open' : 'preview-close-one'" type="text">
+          <div class="btn-text">
+            <i :class="'clfont cl-' + (isHide ? 'preview-open' : 'preview-close-one')"></i>
             <span>{{ isHide ? showBtnText : hideBtnText }}</span>
-          </clButton>
+          </div>
         </slot>
       </div>
     </div>

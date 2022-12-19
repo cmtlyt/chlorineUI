@@ -1,6 +1,6 @@
 {
   "name": "@cmtlyt/chlorine-ui",
-  "version": "0.6.80",
+  "version": "0.6.96",
   "description": "一个令人窒息的组件库？",
   "license": "MIT",
   "main": "dist/lib/index/index.js",

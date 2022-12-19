@@ -15,17 +15,20 @@
     }
     &-btns {
       box-shadow: 0 0 10px -5px var(--info-color);
-      text-align: center;
       transition: background-color 300ms, color 300ms;
+      color: var(--info-color);
       &:hover {
         background-color: #f7f7f7;
-        ::v-deep .btn-text .cl-button__content.text {
-          --btn-font-color: var(--primary-color);
-        }
+        color: var(--primary-color);
       }
       .btn-text {
-        ::v-deep .cl-button__content.text {
-          --btn-font-color: var(--info-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        gap: 10px;
+        i{
+          font-size: 20px;
         }
         span {
           position: relative;
@@ -39,7 +42,6 @@
     }
     &:hover {
       .btn-text {
-        transform: translateX(0);
         span {
           width: max-content;
           opacity: 1;
