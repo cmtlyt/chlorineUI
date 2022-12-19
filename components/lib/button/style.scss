@@ -55,6 +55,13 @@
       display: flex;
       align-items: center;
       gap: var(--btn-icon-space);
+      .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
     }
     &:hover::before {
       box-shadow: inset 0 0 0 999px #ffffff30;
@@ -134,11 +141,8 @@
     }
     &.loading {
       pointer-events: none;
-      i {
+      .icon {
         animation: rotate 5s linear infinite;
-        &::before {
-          content: '\e635';
-        }
       }
       &::before {
         box-shadow: inset 0 0 0 999px #ffffff40;

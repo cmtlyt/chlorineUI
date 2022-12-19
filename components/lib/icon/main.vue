@@ -19,10 +19,6 @@ export default {
     size: { type: [Number, String] },
     rotate: { type: Boolean, default: false },
   },
-  data() {
-    return {}
-  },
-  methods: {},
   filters: {
     removeHeadCl(value) {
       return value.replace('cl-cl-', 'cl-')

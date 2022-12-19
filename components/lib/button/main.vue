@@ -6,7 +6,15 @@
       v-on="!loading && !disabled && $listeners"
     >
       <span>
-        <clIcon v-if="icon || loading" :size="iconSize" :rotate="loading" :name="loading ? 'loading-one' : icon" />
+        <svg
+          v-if="icon || loading"
+          class="icon"
+          aria-hidden="true"
+          :style="{ height: iconSize + 'px', width: iconSize + 'px' }"
+          :class="{ rotate: loading }"
+        >
+          <use :xlink:href="('#cl-' + (loading ? 'loading-one' : icon)) | removeHeadCl"></use>
+        </svg>
         <slot></slot>
       </span>
     </div>
@@ -14,10 +22,8 @@
 </template>
 
 <script>
-import clIcon from '../icon/main.vue'
 export default {
   name: 'clButton',
-  components: { clIcon },
   props: {
     type: {
       type: String,
@@ -33,10 +39,11 @@ export default {
     icon: { type: String, default: '' },
     iconSize: { type: [String, Number], default: '' },
   },
-  data() {
-    return {}
+  filters: {
+    removeHeadCl(value) {
+      return value.replace('cl-cl-', 'cl-')
+    },
   },
-  methods: {},
 }
 </script>
 
