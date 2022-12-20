@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import '../public/script/iconfont.js'
 export default {
   name: 'clIcon',
   props: {
