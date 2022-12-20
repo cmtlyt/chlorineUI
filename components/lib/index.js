@@ -1,8 +1,9 @@
-import button from './button/main.vue'
-import icon from './icon/main.vue'
-import viewWindow from './viewWindow/main.vue'
+import button from './button'
+import icon from './icon'
+import viewWindow from './viewWindow'
+import image from './image'
 
-const cmpList = { button, icon, viewWindow }
+const cmpList = { button, icon, viewWindow, image }
 
 const install = Vue => {
   if (install.installed) return
@@ -13,6 +14,7 @@ const install = Vue => {
 export const clButton = button
 export const clIcon = icon
 export const clViewWindow = viewWindow
+export const clImage = image
 
 export default {
   install,

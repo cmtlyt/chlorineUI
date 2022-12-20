@@ -78,14 +78,18 @@
     <clViewWindow>
       <clButton icon="cl-star"> 123 </clButton>
       <clButton type="success">123</clButton>
-      <template #hide>
-      </template>
+      <template #hide> </template>
     </clViewWindow>
+    <cl-view-window>
+      <div class="content">
+        <cl-image src="ahttps://t12.baidu.com/it/u=2992573373,1781925891&fm=58" @error="loadImageError" />
+      </div>
+    </cl-view-window>
   </div>
 </template>
 
 <script>
-import { clButton, clIcon, clViewWindow } from '../components/lib'
+import { clButton, clIcon, clViewWindow, clImage } from '../components/lib'
 export default {
   name: 'App',
   data() {
@@ -93,10 +97,13 @@ export default {
       loading: true,
     }
   },
-  components: { clButton, clIcon, clViewWindow },
+  components: { clButton, clIcon, clViewWindow, clImage },
   methods: {
     loadingTest() {
       console.log('isloading')
+    },
+    loadImageError(e) {
+      console.log(e)
     },
   },
 }
@@ -115,6 +122,9 @@ export default {
   }
   .icons {
     font-size: 30px;
+  }
+  .content {
+    padding: 10px;
   }
 }
 </style>
