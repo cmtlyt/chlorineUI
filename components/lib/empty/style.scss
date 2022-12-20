@@ -1,0 +1,26 @@
+.cl-empty {
+  --emp-tip-color: var(--info-color);
+  --emp-spacing: 10px;
+  --emp-padding: 20px;
+  width: 100%;
+  height: 100%;
+
+  &__content {
+    box-sizing: border-box;
+    padding: var(--emp-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--emp-spacing);
+    width: 100%;
+    height: 100%;
+    &-svg {
+      width: var(--img-size);
+      height: var(--img-size);
+    }
+    &-tip {
+      color: var(--emp-tip-color);
+    }
+  }
+}

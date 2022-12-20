@@ -1,12 +1,10 @@
 <template>
   <section>
-    <clViewWindow :showBtnBox="false">
+    <clViewWindow>
       <div class="content">这个是显示的内容</div>
     </clViewWindow>
   </section>
 </template>
-
-<script></script>
 
 <style>
 .content {

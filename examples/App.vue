@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <div class="icons">
-      <clIcon rotate name="star" />
-      <clIcon icon="star" size="18" />
-      <clIcon />
-    </div>
+    <cl-view-window>
+      <div class="icons">
+        <clIcon rotate name="star" />
+        <clIcon icon="star" size="18" />
+        <clIcon />
+      </div>
+    </cl-view-window>
     <clViewWindow>
       <div class="btns">
         <clButton>123</clButton>
@@ -85,11 +87,14 @@
         <cl-image src="ahttps://t12.baidu.com/it/u=2992573373,1781925891&fm=58" @error="loadImageError" />
       </div>
     </cl-view-window>
+    <cl-view-window :showBtnBox="false">
+      <cl-empty>123</cl-empty>
+    </cl-view-window>
   </div>
 </template>
 
 <script>
-import { clButton, clIcon, clViewWindow, clImage } from '../components/lib'
+import { clButton, clIcon, clViewWindow, clImage, clEmpty } from '../components/lib'
 export default {
   name: 'App',
   data() {
@@ -97,7 +102,7 @@ export default {
       loading: true,
     }
   },
-  components: { clButton, clIcon, clViewWindow, clImage },
+  components: { clButton, clIcon, clViewWindow, clImage, clEmpty },
   methods: {
     loadingTest() {
       console.log('isloading')
@@ -112,6 +117,10 @@ export default {
 <style lang="scss">
 #app {
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
   .btns {
     padding: 20px;
     & > .div {

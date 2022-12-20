@@ -1,6 +1,6 @@
 <template>
   <section>
-    <clViewWindow>
+    <clViewWindow showBtnBox>
       <div class="content">这个是显示的内容</div>
       <template #hide>这个是隐藏的内容</template>
       <template #btns>

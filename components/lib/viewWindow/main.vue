@@ -27,7 +27,7 @@ export default {
   props: {
     showBtnText: { type: String, default: '显示' },
     hideBtnText: { type: String, default: '隐藏' },
-    showBtnBox: { type: Boolean, default: true },
+    showBtnBox: { type: Boolean, default: false },
   },
   data() {
     return {

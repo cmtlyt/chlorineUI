@@ -11,7 +11,12 @@ module.exports = {
       {
         title: '基本组件',
         path: '/componentDocs/base/button',
-        children: ['/componentDocs/base/button', '/componentDocs/base/icon', '/componentDocs/base/viewWindow'],
+        children: [
+          '/componentDocs/base/button',
+          '/componentDocs/base/icon',
+          '/componentDocs/base/viewWindow',
+          '/componentDocs/base/empty',
+        ],
       },
     ],
     nav: [
