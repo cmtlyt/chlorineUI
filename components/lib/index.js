@@ -3,8 +3,11 @@ import icon from './icon'
 import viewWindow from './viewWindow'
 import image from './image'
 import empty from './empty'
+import manu from './manu'
+import manuItem from './manuItem'
+import submanu from './submanu'
 
-const cmpList = { button, icon, viewWindow, image, empty }
+const cmpList = { button, icon, viewWindow, image, empty, manu, manuItem, submanu }
 
 const install = Vue => {
   if (install.installed) return
@@ -17,6 +20,9 @@ export const clIcon = icon
 export const clViewWindow = viewWindow
 export const clImage = image
 export const clEmpty = empty
+export const clManu = manu
+export const clManuItem = manuItem
+export const clSubmanu = submanu
 
 export default {
   install,

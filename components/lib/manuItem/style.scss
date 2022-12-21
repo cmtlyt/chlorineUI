@@ -1,0 +1,28 @@
+.cl-manu-item {
+  .title-box {
+    transition: color 300ms;
+  }
+  &.active {
+    & > .title-box {
+      color: var(--manu-active-color);
+    }
+  }
+  &:hover {
+    &::before {
+      background-color: var(--manu-item-hover-bgc);
+    }
+    & > .title-box {
+      color: var(--manu-item-hover-color);
+    }
+  }
+  &.disabled {
+    color: var(--manu-item-disabled-color);
+    pointer-events: none;
+    & > .title-box {
+      color: currentColor;
+    }
+    &::before {
+      box-shadow: none;
+    }
+  }
+}
