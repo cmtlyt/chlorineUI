@@ -16,6 +16,7 @@ module.exports = {
           '/componentDocs/base/icon',
           '/componentDocs/base/viewWindow',
           '/componentDocs/base/empty',
+          '/componentDocs/base/manu',
         ],
       },
     ],

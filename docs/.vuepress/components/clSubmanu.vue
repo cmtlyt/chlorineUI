@@ -1,10 +1,13 @@
 <template>
-  <section class="cl-manu-item" :data-idx="idx" :class="{ active: $parent.active == idx, disabled }">
+  <section class="cl-manu-item" :key="idx" :data-idx="idx" :class="{ active: $parent.active == idx, disabled }">
     <div class="title-box">
       <slot name="icon">
         <i class="clfont" v-if="icon" :class="icon | formatIconName"></i>
       </slot>
-      <div class="title">
+      <div class="title"><slot name="title"></slot><i class="clfont cl-down"></i></div>
+    </div>
+    <div class="cl-submanu">
+      <div class="cl-submanu__content">
         <slot></slot>
       </div>
     </div>
@@ -13,11 +16,14 @@
 
 <script>
 export default {
-  name: 'manuItem',
+  name: 'clSubmanu',
   props: {
     idx: [String, Number],
     icon: String,
-    disabled: { type: Boolean, default: false },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   inject: ['$parent'],
   data() {
@@ -33,6 +39,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import './style.scss';
+<style>
+@import '~@style/submanu.css';
 </style>

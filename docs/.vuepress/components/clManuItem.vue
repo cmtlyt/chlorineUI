@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'manuItem',
+  name: '',
   props: {
     idx: [String, Number],
     icon: String,
@@ -33,6 +33,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import './style.scss';
+<style scoped>
+@import '~@style/manuItem.css';
 </style>

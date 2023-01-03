@@ -1,4 +1,5 @@
 const glob = require('glob')
+const { resolve } = require('path')
 const path = require('path')
 const entry = {}
 
@@ -29,6 +30,11 @@ module.exports = {
       {
         test: /\.s?[ca]ss/,
         use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.js/,
+        use: [{ loader: 'babel-loader' }],
+        include: [resolve('components/lib')],
       },
     ],
   },
