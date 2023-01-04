@@ -123,7 +123,7 @@ export default {
   },
   methods: {
     formatUnit(v) {
-      const unitMap = ['px', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'cm', '%']
+      const unitMap = ['px', 'pt', 'pc', 'vh', 'vw', 'vmin', 'vmax', 'cm', '%', 'em', 'ex', 'rem']
       for (const unit of unitMap) if (v.toString().split(unit).length == 2) return v
       return v + 'px'
     },

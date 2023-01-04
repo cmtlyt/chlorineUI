@@ -136,15 +136,41 @@
       style="flex: 1; width: 130px"
       :collapse="collapse"
     ></cl-manu>
+    <cl-view-window>
+      <div class="content">
+        <cl-switch v-model="switch1" @change="switchChange1" />
+        <cl-switch v-model="switch2" width="60" inactiveText="没激活" activeText="激活" @change="switchChange2" />
+        <cl-switch
+          v-model="switch2"
+          width="60"
+          inactiveText="没激活"
+          activeText="激活"
+          disabled
+          @change="switchChange2"
+        />
+      </div>
+    </cl-view-window>
   </div>
 </template>
 
 <script>
-import { clButton, clIcon, clViewWindow, clImage, clEmpty, clManu, clManuItem, clSubmanu } from '../components/lib'
+import {
+  clButton,
+  clIcon,
+  clViewWindow,
+  clImage,
+  clEmpty,
+  clManu,
+  clManuItem,
+  clSubmanu,
+  clSwitch,
+} from '../components/lib'
 export default {
   name: 'App',
   data() {
     return {
+      switch1: false,
+      switch2: true,
       loading: true,
       active2: 't2-1-2',
       collapse: false,
@@ -185,8 +211,14 @@ export default {
       active: 't1',
     }
   },
-  components: { clButton, clIcon, clViewWindow, clImage, clEmpty, clManu, clManuItem, clSubmanu },
+  components: { clButton, clIcon, clViewWindow, clImage, clEmpty, clManu, clManuItem, clSubmanu, clSwitch },
   methods: {
+    switchChange1(v) {
+      console.log('v', v)
+    },
+    switchChange2(v) {
+      console.log('v', v)
+    },
     loadingTest() {
       console.log('isloading')
     },
@@ -206,7 +238,7 @@ body {
 }
 #app {
   box-sizing: border-box;
-  padding-top: 60px;
+  padding: 30px 10px;
   display: flex;
   flex-direction: column;
   align-items: stretch;

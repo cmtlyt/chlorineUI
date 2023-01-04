@@ -17,6 +17,7 @@ module.exports = {
           '/componentDocs/base/viewWindow',
           '/componentDocs/base/empty',
           '/componentDocs/base/manu',
+          '/componentDocs/base/switch',
         ],
       },
     ],
