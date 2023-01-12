@@ -1,0 +1,1 @@
+.cl-icon{width:max-content}.cl-icon__content{display:flex;align-items:center;justify-content:center}.cl-icon__content .icon{width:1em;height:1em;vertical-align:-.15em;fill:currentColor;overflow:hidden}.cl-icon__content i{font-size:inherit}.cl-icon__content.rotate{animation:rotate 5s linear infinite}@keyframes rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{270:function(c,e,l){"use strict";l.r(e);var t={data:()=>({switchValue:!0})},n=l(7),s=Object(n.a)(t,(function(){var c=this,e=c._self._c;return e("section",[e("cl-switch",{model:{value:c.switchValue,callback:function(e){c.switchValue=e},expression:"switchValue"}})],1)}),[],!1,null,null,null);e.default=s.exports}}]);
